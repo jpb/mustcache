@@ -34,7 +34,7 @@ module Mustcache
 
       def compress
         cli.run "tar -czf #{temp_path} -C #{source} ."
-        raise Mustcache::Error.new("Unable to compress #{temp_path} to #{destination}") unless $?.success?
+        raise Mustcache::Error.new("Unable to compress #{source} to #{temp_path}") unless $?.success?
       end
 
       def cleanup
